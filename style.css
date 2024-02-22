@@ -11,7 +11,7 @@ html,
 body {
     height: 100%;
     width: 100%;
-    scroll-behaviour:smooth;
+    scroll-behavior: smooth;
     font-family: 'segoe ui';
     background: var(--secondary-color);
     color: var(--primary-color);
