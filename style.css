@@ -1,0 +1,388 @@
+@import url(./Navbar.css);
+@import url(./bubble.css);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    font-family: 'segoe ui';
+    background: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+:root {
+    --primary-color: #fff;
+    --secondary-color: #222;
+    --hover-link: #f66;
+    --logo-color: #ff0000;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    background: #222;
+    border: 1px solid var(--primary-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, red, orange, yellow);
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    filter: blur(20px);
+}
+
+
+header,
+section {
+    width: 100%;
+    padding: 4.5rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-transform: capitalize;
+}
+
+.data-text {
+    text-align: center;
+    width: 100%;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.data-text h2 {
+    font-size: 3rem;
+    cursor: pointer;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-family: 'lucida sans';
+    line-height: 3rem;
+}
+
+@keyframes fancy {
+
+    10%,
+    50%,
+    90% {
+        color: var(--hover-link);
+        transform: translateY(100%);
+    }
+
+    0%,
+    40%,
+    80%{
+        color: var(--primary-color);
+    }
+}
+
+.data-text h3 {
+    font-size: 2rem;
+}
+
+.data-text p {
+    font-size: 1.5rem;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.data-text span {
+    text-transform: uppercase;
+    font-weight: 700;
+    animation: fancy 5s infinite ease alternate;
+}
+
+.data-img {
+    width: 50%;
+    height: 60vh;
+    overflow: hidden;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border: 1px solid red;
+}
+
+
+@media screen and (max-width:998px) {
+
+    header,
+    section {
+        flex-direction: column;
+        padding: 4rem 1rem;
+    }
+
+    .data-text {
+        width: 100%;
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .data-text h2 {
+        font-size: 2rem;
+    }
+
+    .data-text h3 {
+        font-size: 1.5rem;
+    }
+
+    .data-text p {
+        text-align: center;
+        font-size: 1rem;
+        width: 100%;
+    }
+
+    .data-img {
+        display: none;
+    }
+}
+
+
+/* header section  */
+
+header .data-img {
+    height: 80vh;
+    background-image: url(Assets/imgvid/HERO.jpg);
+    background-position: top;
+    background-size: cover;
+}
+
+@media screen and (max-width:998px) {
+    header {
+        background-image: url(Assets/imgvid/HERO.jpg);
+        background-position: top;
+        background-size: cover;
+    }
+}
+
+/* About section  */
+#about {
+    background-image: url(Assets/imgvid/about.jpg);
+    background-size: cover;
+    background-position: top;
+    font-weight: 600;
+}
+#about .data-text {
+    width: 100%;
+}
+
+#about .data-text p {
+    text-align: justify;
+}
+
+/* skills section  */
+#skills .data-text {
+    width: 100%;
+}
+.boxes {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap:1rem;
+}
+
+.box {
+    height: 170px;
+    width: 170px;
+    cursor: pointer;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.box h3 {
+    transition: 0.3s ease-in-out;
+}
+
+.box i {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+    transition: 0.3s ease-in-out;
+}
+
+.box:hover i {
+    transform: translateY(-100%);
+    color: var(--hover-link);
+}
+
+.box:hover h3 {
+    transform: scale(1.3);
+}
+
+/* demo section  */
+.demos {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.demo {
+    height: 300px;
+    width: 30%;
+    overflow: hidden;
+    position: relative;
+}
+
+.demo-img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    object-fit: cover;
+    object-position: center;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.demo-img video {
+    height: 100%;
+    width: 100%;
+}
+
+.demo:hover .demo-img {
+    filter: blur(5px);
+    transform: scale(1.3);
+}
+
+.demo:hover .demo-text {
+    display: block;
+}
+
+.demo-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    text-transform: uppercase;
+}
+
+.demo-text h3 {
+    font-weight: 700;
+    color: var(--hover-link);
+    margin-bottom: 2rem;
+}
+
+.demo-text a {
+    color: blue;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease-in-out;
+}
+
+.demo-text a:hover {
+    font-weight: 700;
+    color: red;
+    transform: scale(1.2);
+}
+
+@media screen and (max-width:998px) {
+    .demo {
+        width: 100%;
+    }
+}
+
+/* services section  */
+.services {
+    margin-top: 1rem;
+display: flex;
+align-items: center;
+justify-content: space-around;
+gap: 1rem;
+flex-wrap: wrap;
+}
+
+.service {
+    width: 30%;
+    padding: 2rem 0;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    box-shadow: 2px 2px 5px #000;
+    transition: 0.5s ease;
+    cursor: pointer;
+}
+
+.service p {
+    width: 100%;
+}
+
+.service i {
+    font-size: 3rem;
+    animation: icondance 3s infinite alternate;
+    transition: 0.3s ease;
+}
+
+@media screen and (max-width:998px) {
+.service{
+    width: 100%;
+}
+}
+
+@keyframes icondance {
+    100%{
+        transform: scale(1.2) translateY(-70%);
+        color: var(--hover-link);
+    }
+}
+
+.service:hover {
+    color: var(--secondary-color);
+    background-color: var(--primary-color);
+    box-shadow: -2px -2px 5px #fff;
+}
+
+
+/* contact section  */
+.contacts {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.contacts a {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+}
+
+.contacts a i {
+    margin-right: 1rem;
+    font-size: 2rem;
+    animation: links 10s  infinite ;
+}
+
+
+@keyframes links {
+    33%,66%,100%{
+        color: blue;
+    }
+    0%,50%,85%{
+        color: violet;
+    }
+}
+
+
+footer p {
+    z-index: 99;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 1rem 0;
+    font-size: 1.2rem;
+    text-transform: capitalize;
+    text-align: center;
+}

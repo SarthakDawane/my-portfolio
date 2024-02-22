@@ -1,0 +1,57 @@
+.bubble {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    filter: blur(35px);
+    position: fixed;
+}
+
+.bubble1 {
+    background: linear-gradient(to bottom left, orange,blue);
+    top: 75%;
+    left: 10%;
+    transform: translate(-50%,-50%);
+    animation: bubbli1 5s linear infinite alternate;
+}
+
+.bubble2 {
+    background: linear-gradient(to top left,violet,yellow);
+    top: 80%;
+    right: 50%;
+    animation: bubbli2 2.5s linear infinite alternate;
+}
+
+.bubble3 {
+    background: linear-gradient(to top right,aqua,pink);
+    top: 75%;
+    right: 10%;
+    animation: bubbli3 5s linear infinite alternate;
+}
+
+@keyframes bubbli1 {
+    100% {
+        left: 80%;
+        top: 10%;
+        filter: blur(70px);
+    }
+}
+@keyframes bubbli2 {
+    100% {
+        top: 0;
+        filter: blur(70px);
+    }
+
+}
+@keyframes bubbli3 {
+    100% {
+        right: 70%;
+        top: 0;
+        filter: blur(70px);
+    }
+}
+
+@media screen and (max-width:998px) {
+    .bubble2 {
+        display: none;
+    }
+}
