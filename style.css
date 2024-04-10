@@ -13,9 +13,7 @@ body {
     width: 100%;
     scroll-behavior: smooth;
     font-family: 'segoe ui';
-    //font-family: 'poppins', sans-serif;
     background: var(--secondary-color);
-    background: #050000;
     color: var(--primary-color);
 }
 
